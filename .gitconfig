@@ -1,0 +1,71 @@
+[user]
+	name = 007
+	;email = ziyix.gao@intel.com
+	email = 007lookworld@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+	editor = vim
+	# 解决中文文件名乱码问题
+    quotepath = false
+	longpaths = true
+[color]
+    ui = auto
+[push]
+	default = simple
+
+
+[alias]
+    # 常用命令别名
+	ci = commit
+	co = checkout
+	br = branch
+	ss = status
+    sss = status -s
+    cs = commit -s
+    cmds = commit --amend -s
+
+	# 恢复暂存区中的文件
+    unstage = restore --staged
+    # 暂存（Stash）
+    # 暂存当前所有改动
+    pop = stash pop
+    # 保存暂存
+    stsh = stash
+    # 显示所有暂存列表
+    stls = stash list
+
+	# 删除本地合并过的分支
+    # cleanup = !git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+    # 强制删除本地分支
+    del = branch -D
+
+    # 日志美化与查询
+    # 查看一行美化日志
+    l = log --oneline
+	# 查看美化日志图谱，显示所有分支
+    la = log --all --decorate --oneline --graph
+# 查看美化日志图谱，不显示所有分支
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    # 查看简短日志
+    ls = log --graph --pretty=format:'%C(yellow)%h %C(green)%ad %C(red)%an %C(bold blue)%s%Creset' --date=short
+
+	# lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+
+
+# AutoCRLF
+# 提交时转换为LF，检出时转换为CRLF for windows
+# git config --global core.autocrlf true   
+# 提交时转换为LF，检出时不转换 for linux
+# git config --global core.autocrlf input   
+# 提交检出均不转换
+# git config --global core.autocrlf false
+
+# SafeCRLF
+# 拒绝提交包含混合换行符的文件
+# git config --global core.safecrlf true   
+# 允许提交包含混合换行符的文件
+# git config --global core.safecrlf false   
+# 提交包含混合换行符的文件时给出警告
+# git config --global core.safecrlf warn
