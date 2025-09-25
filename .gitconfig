@@ -45,7 +45,7 @@
     l = log --oneline
 	# 查看美化日志图谱，显示所有分支
     la = log --all --decorate --oneline --graph
-# 查看美化日志图谱，不显示所有分支
+    # 查看美化日志图谱，不显示所有分支
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     # 查看简短日志
     ls = log --graph --pretty=format:'%C(yellow)%h %C(green)%ad %C(red)%an %C(bold blue)%s%Creset' --date=short
